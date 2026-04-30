@@ -5,28 +5,32 @@
 
 ## 使用的库
 - **Eigen 5.0.0** - C++线性代数库，用于矩阵运算和最小二乘求解
-  - 路径：`eigen-5.0.0/Eigen/Dense`
+  - 已包含在项目中（`Eigen/` 目录）
   - 仅需头文件，无需编译安装
 
 ## 文件结构
 ```
+├── Eigen/                # Eigen库头文件
 ├── adjustment.h          # 头文件：结构体定义和函数声明
 ├── adjustment_impl.cpp   # 实现文件：核心算法实现
 ├── main.cpp             # 主程序：程序入口
 ├── Data.pts             # 输入：地面点和像点坐标
 ├── Data.pht             # 输入：影像外方位元素
+├── Data.cmr             # 输入：相机参数
 └── result.txt           # 输出：平差后的地面点坐标
 ```
 
 ## 编译方法
 
+**要求：** 支持C++14标准的编译器
+
 ```bash
-g++ -o adjustment_new main.cpp adjustment_impl.cpp -I.
+g++ -std=c++14 main.cpp adjustment_impl.cpp -o adjustment.exe
 ```
 
 ## 运行程序
 ```bash
-./adjustment_new
+./adjustment.exe
 ```
 
 ## 输出结果

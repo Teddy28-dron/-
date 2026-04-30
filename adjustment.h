@@ -3,7 +3,7 @@
 
 #include<vector>
 #include<map>
-#include"eigen-5.0.0/Eigen/Dense"
+#include"Eigen/Dense"
 
 struct ImagePoint{
     int imageID;
